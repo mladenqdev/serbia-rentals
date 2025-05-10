@@ -8,8 +8,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-200 py-4 mt-24">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
-        <div className="mb-4 md:mb-0">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-start px-4">
+        <div className="mb-4 md:mb-0 mr-0 md:mr-4">
           <Image src={logo} alt="Logo" className="h-8 w-auto" />
         </div>
         <div className="flex flex-wrap justify-center md:justify-start mb-4 md:mb-0">
@@ -22,7 +22,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div>
+        <div className="ml-0 md:ml-auto">
           <p className="text-sm text-gray-500 mt-2 md:mt-0">
             &copy; {currentYear} Serbia Rentals. All rights reserved.
           </p>

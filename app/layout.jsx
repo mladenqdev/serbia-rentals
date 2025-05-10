@@ -1,7 +1,10 @@
 import { Poppins } from "next/font/google";
 import "../assets/styles/globals.css";
+import "react-toastify/dist/ReactToastify.css";
 
 import AuthProvider from "@/components/AuthProvider";
+
+import { ToastContainer } from "react-toastify";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -28,6 +31,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           <main>{children}</main>
           <Footer />
+          <ToastContainer />
         </body>
       </html>
     </AuthProvider>
