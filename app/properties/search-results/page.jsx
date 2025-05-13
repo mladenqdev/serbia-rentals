@@ -6,10 +6,10 @@ import connectDB from "@/config/database";
 import Property from "@/models/Property";
 import { convertToSerializeableObject } from "@/utils/convertToObject";
 
-const SearchResultsPage = async ({
-  searchParams: { location, propertyType },
-}) => {
+const SearchResultsPage = async ({ searchParams }) => {
   await connectDB();
+
+  const { location, propertyType } = await searchParams;
 
   const locationPattern = new RegExp(location, "i");
 
