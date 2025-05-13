@@ -21,7 +21,6 @@ async function bookmarkProperty(propertyId) {
 
   // Check if property is bookmarked
   let isBookmarked = user.bookmarks.includes(propertyId);
-  console.log(isBookmarked);
 
   let message;
 
@@ -36,8 +35,6 @@ async function bookmarkProperty(propertyId) {
     message = "Bookmark added successfully";
     isBookmarked = true;
   }
-
-  console.log(message);
 
   await user.save();
   revalidatePath("/properties/saved", "page");
