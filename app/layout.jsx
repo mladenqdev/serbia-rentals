@@ -3,6 +3,7 @@ import "../assets/styles/globals.css";
 import "react-toastify/dist/ReactToastify.css";
 
 import AuthProvider from "@/components/AuthProvider";
+import { GlobalProvider } from "@/contexts/GlobalContext";
 
 import { ToastContainer } from "react-toastify";
 
@@ -26,14 +27,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <AuthProvider>
-      <html lang="en">
-        <body className={`${poppins.variable} font-sans antialiased`}>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-          <ToastContainer />
-        </body>
-      </html>
+      <GlobalProvider>
+        <html lang="en">
+          <body className={`${poppins.variable} font-sans antialiased`}>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+            <ToastContainer />
+          </body>
+        </html>
+      </GlobalProvider>
     </AuthProvider>
   );
 }
